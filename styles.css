@@ -1,0 +1,331 @@
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Частицы на фоне */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+}
+
+/* Анимация курсора */
+#cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s ease-out, opacity 0.5s ease-out;
+}
+
+.cursor-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-fade 1s ease-out forwards;
+}
+
+@keyframes particle-fade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+/* Заголовок */
+header {
+    background: linear-gradient(135deg, #ff6f61, #ffcc00);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+header p {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Навигация */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Секции */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+#about, #features, #cta, #team, #testimonials, #contact {
+    padding: 100px 0;
+    position: relative;
+}
+
+#about h2, #features h2, #cta h2, #team h2, #testimonials h2, #contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#about p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Особенности */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Параллакс */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Команда */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.team-card:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Отзывы */
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.testimonial {
+    flex: 0 0 auto;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.testimonial h3 {
+    font-size: 1.2rem;
+    color: #ff6f61;
+}
+
+/* Призыв к действию */
+#cta {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    text-align: center;
+}
+
+#cta h2 {
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
+}
+
+.btn:hover {
+    background: #ff3b2f;
+    transform: scale(1.1);
+}
+
+/* Форма обратной связи */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contactForm input, #contactForm textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contactForm button:hover {
+    background: #ff3b2f;
+}
+
+/* Футер */
+footer {
+    background: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Кнопка "Наверх" */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+    transition: background 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background: #ff3b2f;
+}
